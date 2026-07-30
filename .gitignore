@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+build/
+
+# environment variables
+.env
+.env.*
+
+# database
+*.sqlite
+*.sqlite3
+
+# test
+coverage/
+
+# logs
+*.log
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
