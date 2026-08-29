@@ -35,7 +35,6 @@ erDiagram
         string row "段"
         string column "列/スロット"
         string notes "メモ欄"
-        string qrcode_id "識別Id"
         date created_at	"作成日"
         date updated_at	"更新日	"
     }
@@ -144,9 +143,8 @@ erDiagram
 | 4   | 段                     | row           | string | 50   |         |     |     |     |                                                   | 
 | 5   | 列/スロット            | column        | string | 50   |         |     |     |     |                                                   | 
 | 6   | メモ欄                 | notes         | string | 50   |         |     |     |     |                                                   | 
-| 7   | 識別Id                 | qrcode_id     | string | 50   |         |     |     |     | 棚に貼るQRコードの識別子　UNIQUE                  | 
-| 8   | 作成日                 | created_at    | date   |      |         |     |     |     | デフォルト：現在日付                              | 
-| 9   | 更新日                 | updated_at    | date   |      |         |     |     |     | デフォルト：現在日付                              | 
+| 7   | 作成日                 | created_at    | date   |      |         |     |     |     | デフォルト：現在日付                              | 
+| 8   | 更新日                 | updated_at    | date   |      |         |     |     |     | デフォルト：現在日付                              | 
 
 * book_genres（書籍ジャンル）
 
