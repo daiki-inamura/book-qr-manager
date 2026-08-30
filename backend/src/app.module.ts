@@ -5,6 +5,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Book } from './books/book.entity';
 import { Location } from './locations/location.entity';
+import { BooksModule } from './books/books.module';
+import { LocationsModule } from './locations/locations.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { Location } from './locations/location.entity';
       synchronize: true,
       
     }),
+    BooksModule,
+    LocationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
