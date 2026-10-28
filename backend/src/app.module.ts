@@ -7,6 +7,8 @@ import { Book } from './books/book.entity';
 import { Location } from './locations/location.entity';
 import { BooksModule } from './books/books.module';
 import { LocationsModule } from './locations/locations.module';
+import { BookStatusModule } from './book-statuses/book-status.module';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { LocationsModule } from './locations/locations.module';
     }),
     BooksModule,
     LocationsModule,
+    BookStatusModule,
+    ReviewsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

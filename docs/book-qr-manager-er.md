@@ -46,6 +46,8 @@ erDiagram
         date start_date "読書開始日"
         date finish_date "読了日"
         string status "ステータス"
+        date created_at	"作成日"
+        date updated_at	"更新日	"        
     }
 
     reviews {
@@ -121,6 +123,8 @@ erDiagram
 | 4   | 読書開始日             | start_date    | date   |      |         |     |     | 〇  |                                                   | 
 | 5   | 読了日                 | finish_date   | date   |      |         |     |     |     |                                                   | 
 | 6   | ステータス             | status        | string |      |         |     |     | 〇  | enum: backlog, reading, paused, finished, dropped | 
+| 7  | 作成日       | created_at   | date   |      |         |     |     | デフォルト：現在日付                  | 
+| 8  | 更新日       | updated_at   | date   |      |         |     |     | デフォルト：現在日付                  | 
 
 * reviews（感想・レビュー）
 
@@ -128,7 +132,7 @@ erDiagram
 | --- | ---------------------- | ------------- | ------ | ---- | ------- | --- | --- | --- | ------------------------------------------------- | 
 | 1   | レビューId             | id            | int    |      |         | 〇  |     |     |                                                   | 
 | 2   | 書籍Id                 | book_id       | int    |      |         |     | 〇  | 〇  |                                                   | 
-| 3   | レーティング           | rating        | int    | 5    |         |     |     | 〇  |                                                   | 
+| 3   | レーティング           | rating        | int    | -    |         |     |     | 〇  |1〜5の5段階評価                                              | 
 | 4   | レビュータイトル       | title         | string | 255  |         |     |     |     |                                                   | 
 | 5   | レビュー本文           | body          | string | 500  |         |     |     |     |                                                   | 
 | 6   | レビュー日時           | reviewed_at   | date   |      |         |     |     |     |                                                   | 

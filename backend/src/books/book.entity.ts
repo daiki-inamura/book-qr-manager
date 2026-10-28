@@ -1,8 +1,16 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToOne, OneToMany } from 'typeorm';
 import { Location } from '../locations/location.entity';
+import { BookStatus } from '../book-statuses/book-status.entity';
+import { Review } from '../reviews/review.entity';
 
 @Entity()
 export class Book {
+ @OneToOne(() => BookStatus, (bookStatus) => bookStatus.book)
+ book_status: BookStatus;
+
+ @OneToMany(() => Review, (review) => review.book)
+ reviews: Review[];
+
  @PrimaryGeneratedColumn()
  id: number;
  
@@ -35,9 +43,6 @@ export class Book {
  
  @Column({ type: 'text', nullable: true })
  memo: string | null;
- 
- @Column({ type: 'int', nullable: true })
- location_id: number | null;
 
  @ManyToOne(() => Location, { nullable: true })
  @JoinColumn({ name: 'location_id' })
